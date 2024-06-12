@@ -34,9 +34,10 @@ const FlightDetail: React.FC = () => {
 
     return (
         <div className={`modal ${selectedFlight ? 'show-modal' : ''}`}>
-            <div className="modal-content">
-                <span className="close" onClick={handleCloseModal}>&times;</span>
-                {flightDetail ? (
+            {flightDetail ? (
+                <div className="modal-content">
+                    <span className="close" onClick={handleCloseModal}>&times;</span>
+
                     <div>
                         <h2 className='flight-header'>{flightDetail.flightNumber}</h2>
                         <div className='flight-column'>
@@ -70,10 +71,11 @@ const FlightDetail: React.FC = () => {
                         </div>
 
                     </div>
-                ) : (
-                    <p>Loading...</p>
-                )}
-            </div>
+                </div>
+            ) : (
+                <p>Loading...</p>
+            )}
+
         </div>
     );
 };
