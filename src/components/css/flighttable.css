@@ -1,0 +1,37 @@
+.flight-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid white;
+}
+
+.flight-table thead tr th {
+  color: black;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.flight-table th {
+  background-color: #f2f2f2;
+}
+
+.status-departed {
+  color: orange;
+}
+
+.status-on-time {
+  color: green;
+}
+
+.status-delayed {
+  color: red;
+}
+body {
+  justify-content: center;
+  background-image: url(../assets/flight_image.png);
+  background-size: 30px auto;
+}
