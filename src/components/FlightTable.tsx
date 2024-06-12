@@ -3,6 +3,7 @@ import FlightRow from './FlightRow';
 import { fetchFlights, Flight } from '../api/flights';
 import './css/flighttable.css';
 import { Outlet } from 'react-router-dom';
+import loadingIcon from '../assets/flight.png';
 
 const FlightTable: React.FC = () => {
     const [flights, setFlights] = useState<Flight[]>([]);
@@ -21,24 +22,26 @@ const FlightTable: React.FC = () => {
     }, []);
 
     return (
-        <div>
-            <table className="flight-table">
-                <thead>
-                    <tr>
-                        <th>Flight Number</th>
-                        <th>Airline</th>
-                        <th>Origin</th>
-                        <th>Destination</th>
-                        <th>Departure Time</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {flights.map((flight) => (
-                        <FlightRow key={flight.id} flight={flight} />
-                    ))}
-                </tbody>
-            </table>
+        <div data-testid="flight-table">
+            {flights.length != 0 ?
+                <table className="flight-table">
+                    <thead>
+                        <tr>
+                            <th>Flight Number</th>
+                            <th>Airline</th>
+                            <th>Origin</th>
+                            <th>Destination</th>
+                            <th>Departure Time</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {flights.map((flight) => (
+                            <FlightRow data-testid="flight-list" key={flight.id} flight={flight} />
+                        ))}
+                    </tbody>
+                </table>
+                : <img className="loading-icon" src={loadingIcon}></img>}
             <Outlet></Outlet>
         </div>
     );

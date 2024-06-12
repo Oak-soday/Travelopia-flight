@@ -1,0 +1,12 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`screenshot testing 1`] = `
+<div
+  data-testid="flight-table"
+>
+  <img
+    className="loading-icon"
+    src="/src/assets/flight.png"
+  />
+</div>
+`;

@@ -35,3 +35,19 @@ body {
   background-image: url(../../assets/flight_image.png);
   background-size: 30px auto;
 }
+.loading-icon {
+  width: 400px;
+  height: 400px;
+  animation: slideUp 1s ease-in-out; /* Apply the slideUp animation */
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0; /* Start from transparent */
+    transform: translateY(50%); /* Start position: move down */
+  }
+  100% {
+    opacity: 1; /* End at full opacity */
+    transform: translateY(0); /* End position: move up */
+  }
+}

@@ -1,8 +1,26 @@
-// import FlightTable from "../FlightTable";
-// import render from "@testing-library/react";
-// import '../css/flighttable.css';
-// import React from 'react';
 
-// test("should render flight table", () => {
-//     render(<FlightTable></FlightTable>);
-// })
+import renderer from 'react-test-renderer';
+import React from 'react';
+import { test, expect, describe, it, vi } from 'vitest';
+import FlightTable from '../FlightTable';
+import { render, screen } from '@testing-library/react';
+
+test('mount component', async () => {
+    expect(FlightTable).toBeTruthy();
+});
+
+test('screenshot testing', () => {
+    const tree = renderer
+        .create(
+            <FlightTable></FlightTable>,
+        )
+        .toJSON();
+    expect(tree).toMatchSnapshot();
+});
+test("should render flight Table", () => {
+    render(<FlightTable></FlightTable>);
+    const FlightElement = screen.getByTestId('flight-table');
+    expect(FlightElement).toBeDefined();
+});
+
+
