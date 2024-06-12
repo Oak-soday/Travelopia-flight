@@ -22,7 +22,7 @@ const FlightTable: React.FC = () => {
     }, []);
 
     return (
-        <div data-testid="flight-table">
+        <div data-testid="flight-table" className='flight-container'>
             {flights.length != 0 ?
                 <table className="flight-table">
                     <thead>

@@ -1,7 +1,17 @@
+.flight-container {
+  height: 80vh;
+  overflow-y: auto;
+}
 .flight-table {
   width: 100%;
   border-collapse: collapse;
   border: 1px solid white;
+}
+.flight-table thead {
+  position: sticky;
+  top: 0;
+  background-color: white; /* Ensure it stands out from the table body */
+  z-index: 1; /* Ensure it appears above the table body */
 }
 
 .flight-table thead tr th {
