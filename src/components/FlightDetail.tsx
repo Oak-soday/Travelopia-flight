@@ -8,15 +8,11 @@ import './css/flightdetail.css'
 import getStatusClass from '../utils/getStatusClass';
 
 const FlightDetail: React.FC = () => {
-    const { id } = useParams<{ id: string }>();
+    const { id } = useParams<{ id: string | undefined }>();
     const [flightDetail, setFlightDetail] = useState<Flight | null>(null);
     const [selectedFlight, setSelectedFlight] = useState<boolean | null>(true);
     const navigate = useNavigate();
 
-    interface Props {
-        flight: Flight;
-        onClose: () => void;
-    }
     const handleCloseModal = () => {
         setSelectedFlight(null);
         navigate(-1);
@@ -24,10 +20,10 @@ const FlightDetail: React.FC = () => {
     useEffect(() => {
         const fetchDetail = async () => {
             try {
-                const data = await fetchFlightDetails(id);
+                const data = await fetchFlightDetails(id ? id : "");
                 setFlightDetail(data);
             } catch (error) {
-                // Handle error
+                console.log(error);
             }
         };
 
