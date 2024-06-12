@@ -32,6 +32,6 @@ td {
 }
 body {
   justify-content: center;
-  background-image: url(../assets/flight_image.png);
+  background-image: url(../../assets/flight_image.png);
   background-size: 30px auto;
 }
