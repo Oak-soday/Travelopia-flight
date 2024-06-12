@@ -1,7 +1,6 @@
 
 import renderer from 'react-test-renderer';
-import React from 'react';
-import { test, expect, describe, it, vi } from 'vitest';
+import { test, expect } from 'vitest';
 import FlightTable from '../FlightTable';
 import { render, screen } from '@testing-library/react';
 
